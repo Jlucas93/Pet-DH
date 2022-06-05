@@ -1,10 +1,21 @@
 const express = require('express');
 const router = express.Router()
+const servicoController = require('../controllers/servicoController');
+const storage = require('../config/storage')
 
-router.get('/servicos', (req, res) => res.send('Lista de serviços'));
-router.get('/servicos/:id', (req, res) => res.send('Detalhes do serviço: ' + req.params.id));
-router.post('/servicos', (req, res) => res.send('Cadastro de serviço'));
-router.put('/servicos/:id', (req, res) => res.send('Atualização de serviço: ' + req.params.id));
-router.delete('/servicos/:id', (req, res) => res.send('Exclusão de serviço: ' + req.params.id));
+const uploadAvatar = storage('avatar', '/servicos')
+router.get('/adm/servicos', servicoController.index);
+
+router.get('/adm/servicos/cadastro', servicoController.create);
+
+router.get('/adm/servicos/:id', servicoController.show);
+
+router.get('/adm/servicos/:id/editar', servicoController.edit);
+
+router.post('/adm/servicos', servicoController.store);
+
+router.put('/adm/servicos/:id', uploadAvatar, servicoController.update);
+
+router.delete('/adm/servicos/:id', servicoController.destroy);
 
 module.exports = router;
