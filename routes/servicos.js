@@ -12,7 +12,7 @@ router.get('/adm/servicos/:id', servicoController.show);
 
 router.get('/adm/servicos/:id/editar', servicoController.edit);
 
-router.post('/adm/servicos', servicoController.store);
+router.post('/adm/servicos', uploadAvatar, servicoController.store);
 
 router.put('/adm/servicos/:id', uploadAvatar, servicoController.update);
 
