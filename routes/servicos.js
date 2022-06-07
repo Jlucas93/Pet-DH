@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router()
 const servicoController = require('../controllers/servicoController');
 const storage = require('../config/storage')
+const requestLogger = require('../middlewares/requestLogger');
+
+
+router.use('/adm/servicos', requestLogger)
 
 const uploadAvatar = storage('avatar', '/servicos')
 router.get('/adm/servicos', servicoController.index);
