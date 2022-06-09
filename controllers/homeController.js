@@ -1,4 +1,5 @@
 const Servico = require('../models/servico');
+const Usuario = require('../models/usuarios')
 
 const homeController = {
     index: (req, res) => {
@@ -10,10 +11,25 @@ const homeController = {
     },
     servicos: (req, res) => {
         const servicos = Servico.findAll();
-        res.render('home/servicos', { servicos });  
+        res.render('home/servicos', { servicos });
     },
     login: (req, res) => {
         res.send('Login');
+    },
+    create: (req, res) => {
+        res.render('home/registro')
+    },
+    store: (req, res) => {
+        const { nome, email, senha } = req.body
+        const usuario = {
+            nome,
+            email,
+            senha
+        };
+
+        Usuario.save(usuario);
+
+        return res.redirect('/'); // endpoint ou routes
     }
 }
 
