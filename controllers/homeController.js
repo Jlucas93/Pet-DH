@@ -1,5 +1,7 @@
 const Servico = require('../models/servico');
 const Usuario = require('../models/usuarios')
+const { validationResult } = require('express-validator')
+const bcrypt = require('bcrypt');
 
 const homeController = {
     index: (req, res) => {
@@ -14,22 +16,34 @@ const homeController = {
         res.render('home/servicos', { servicos });
     },
     login: (req, res) => {
-        res.send('Login');
+        res.render('home/login');
     },
     create: (req, res) => {
         res.render('home/registro')
     },
+    showAdm: (req, res) => {
+        res.render('adm/')
+    },
     store: (req, res) => {
-        const { nome, email, senha } = req.body
-        const usuario = {
-            nome,
-            email,
-            senha
-        };
+        let error = validationResult(req)
+        if (error.isEmpty()) {
 
-        Usuario.save(usuario);
+            const { nome, email, senha } = req.body
+            const senhaCriptografada = bcrypt.hashSync(senha, 10)
+            const usuario = {
+                nome,
+                email,
+                senha: senhaCriptografada
+            };
+            Usuario.save(usuario);
 
-        return res.redirect('/'); // endpoint ou routes
+            return res.redirect('/adm'); // endpoint ou routes
+        }
+        res.render('home/registro', { listaDeErros: error.errors, old: req.body })
+    },
+    postLogin: (req, res) => {
+        const { user } = req.body;
+        Usuario.findById(user)
     }
 }
 

@@ -265,3 +265,19 @@ section.contato a:any-link,
 section.contato p {
     color: #575757;
 }
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+.menu .btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-left: 50px;
+    text-align: center;
+    padding: 0;
+}

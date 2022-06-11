@@ -33,9 +33,16 @@
             "senha": "123456"
         },
         {
-            "nome": "aaa",
-            "email": "aaaa@gmail.com",
-            "senha": ""
+            "nome": "Lucas",
+            "email": "jlnascimentoandrade@gmail.com",
+            "senha": "123456",
+            "id": "ae8ca66e-23c6-4d09-ade3-d34fa27967d3"
+        },
+        {
+            "nome": "João Lucas Nascimento Andrade",
+            "email": "jlnascimentoandrade@gmail.com",
+            "senha": "$2b$10$XD3lvvWm3U8M4IzTrIbfT.gxq.38YFbBvd9KDBpUFR2jzdsmpDJpe",
+            "id": "33059b2a-d3c2-4d9c-8260-13708bfaaa6b"
         }
     ],
     "pets": []

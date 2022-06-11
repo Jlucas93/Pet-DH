@@ -24,4 +24,4 @@ app.use((_req, res, _next) => {
 })
 
 
-app.listen(3001, () => console.log('Rodando...'))
+app.listen(3001, () => console.log('Rodando... na porta 3001'))
