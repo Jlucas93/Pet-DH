@@ -27,22 +27,16 @@
     ],
     "usuarios": [
         {
-            "id": 1,
-            "nome": "shanks",
-            "email": "shanks@email.com",
-            "senha": "123456"
-        },
-        {
             "nome": "Lucas",
             "email": "jlnascimentoandrade@gmail.com",
-            "senha": "123456",
-            "id": "ae8ca66e-23c6-4d09-ade3-d34fa27967d3"
+            "senha": "$2b$10$1leHp.18bnOVZ3P7EO0cMeOdu.TgVywZfahzRbwryvDMNVYe5yFci",
+            "id": "a3a9405e-32ab-4367-9d54-b9967eaf0c22"
         },
         {
-            "nome": "João Lucas Nascimento Andrade",
-            "email": "jlnascimentoandrade@gmail.com",
-            "senha": "$2b$10$XD3lvvWm3U8M4IzTrIbfT.gxq.38YFbBvd9KDBpUFR2jzdsmpDJpe",
-            "id": "33059b2a-d3c2-4d9c-8260-13708bfaaa6b"
+            "nome": "Ana carolina",
+            "email": "anapunhagui@outlook.com",
+            "senha": "$2b$10$UjGV3Ppc93K9oN0.EuLmUeiDfGiG6.GvmDUQahOEBVycZwbIGBQMK",
+            "id": "21069757-206f-4b6b-a275-4fa49ec99bd2"
         }
     ],
     "pets": []

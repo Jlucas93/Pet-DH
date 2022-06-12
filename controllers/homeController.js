@@ -42,8 +42,21 @@ const homeController = {
         res.render('home/registro', { listaDeErros: error.errors, old: req.body })
     },
     postLogin: (req, res) => {
-        const { user } = req.body;
-        Usuario.findById(user)
+        const {
+            email,
+            senha
+        } = req.body
+        const user = Usuario.findByEmail(email)
+        if (!user) {
+            res.render('home/login', { error: 'Email ou senha estão incorretos ou não existe' })
+            console.log('erro no email')
+            return
+        } else if (!bcrypt.compareSync(senha, user.senha)) {
+            res.render('home/login', { error: 'Email ou senha estão incorretos ou não existe' })
+            console.log('erro na senha')
+            return
+        }
+        return res.redirect('/adm')
     }
 }
 

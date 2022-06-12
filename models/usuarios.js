@@ -23,6 +23,11 @@ const Usuario = {
         const usuario = db.usuarios.find(usuario => usuario.id == id);
         return usuario;
     },
+    findByEmail: (email) => {
+        const db = open();
+        const usuario = db.usuarios.find(user => user.email === email)
+        return usuario;
+    },
     save: (usuario) => {
         const db = open();
         usuario.id = geradorDeId(); // gerando um id para meu novo serviço

@@ -1,5 +1,6 @@
 const Servico = require('../models/servico');
 const fs = require('fs');
+
 const servicoController = {
   index: (req, res) => {
     const servicos = Servico.findAll();
